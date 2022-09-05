@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button>Change H1</button>
+        <button id="h3">Change H3</button>
+        <button id="h5">Change H5</button>
+        <button id="g">Change Green</button>
+        <button id="r">Change Red</button>
+        <button id="b">Change Blue</button>
+        <script>
+            document.querySelector('button').addEventListener('click',changeh1);
+            function changeh1(){
+                document.querySelector('h1').style.color="red";
+
+            }
+            document.querySelector('#h3').addEventListener('click',changeh3);
+            function changeh3(){
+                var x=document.querySelectorAll('h3');
+                for(var i=0;i<x.length;i++){
+                    x[i].style.color='green';
+                }
+            }
+            document.querySelector('#h5').addEventListener('click',changeh5);
+            function changeh5(){
+                var x=document.querySelectorAll('h5');
+                for(i=0;i<x.length;i++){
+                    x[i].style.color='blue';
+                }
+            }
+            document.querySelector("#g").addEventListener('click',changeToG);
+            function changeToG(){
+                var x=document.querySelectorAll('.green');
+                for(var i=0;i<x.length;i++){
+                    x[i].style.color='green';
+                }
+            }
+            document.querySelector('#r').addEventListener('click',changeToR);
+            function changeToR(){
+                var x=document.querySelectorAll('.red');
+                for(var i=0;i<x.length;i++){
+                    x[i].style.color='red';
+                }
+            }
+            document.querySelector('#b').addEventListener('click',changeToB);
+            function changeToB(){
+                var x=document.querySelectorAll('.blue');
+                for(var i=0;i<x.length;i++){
+                    x[i].style.color='blue';
+                }
+
+
+            }
+
+        </script>
+    </body>
+</html>

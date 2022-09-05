@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <form>
+        <input id="email" type="email" placeholder="enter email">
+        <input id="password" type="text" placeholder="enter password">
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector('form').addEventListener('submit',loginFunction);
+    var loginArr=JSON.parse(localStorage.getItem('arrSignUpInfo'));
+  
+
+    function loginFunction(){
+        event.preventDefault();
+        var loginEmail=document.querySelector('#email').value;
+        var loginPassword=document.querySelector('#password').value;
+        var c=0;
+        console.log(loginEmail,loginPassword);
+
+        loginArr.forEach(function(e,i){
+            if(loginEmail==e.email && loginPassword==e.password){
+                c=1;
+            
+               
+
+            }
+
+        });
+        if(c==1){
+            alert('Login Successfully');
+            window.location.href='men.html';
+        }else{
+            alert('Credentials incorrect. Please try with right credentials!!');
+        }
+
+
+        
+
+    }
+</script>

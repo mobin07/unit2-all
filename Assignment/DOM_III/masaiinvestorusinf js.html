@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap:10px;
+
+
+
+
+        }
+        #logo1{
+            height:100px;
+            /* width:100px; */
+            justify-content: center;
+            margin-top: -20px;
+        }
+        #n{
+            text-align: center;
+        }
+        #role{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script>
+    var  investors=[
+        {id:1,
+        image:'https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg',
+        name:'Vijay Shekhar Sharma',
+        companyLogo:'https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg',
+        role:'Founder & CEO'},
+        {id:2,
+        image:'https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png',
+        name:'Kunal Shah',
+        companyLogo:'https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png',
+        role:'Founder'},
+        {id:3,
+        image:'https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg',
+        name:'Amrish Rau',
+        companyLogo:'https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png',
+        role:'CEO'},
+        {id:4,
+        image:'https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg',
+        name:'Sampad Swain',
+        companyLogo:'https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png',
+        role:'Co-Founder & CEO'}]
+
+        investors.map(function(e,i,arr){
+            var box=document.createElement('div');
+            var img=document.createElement('img');
+            img.src=e.image;
+
+            var name1=document.createElement('h3');
+            name1.innerText=e.name;
+            name1.setAttribute('id','n');
+
+            var companyRole=document.createElement('h4');
+            companyRole.innerText=e.role;
+            companyRole.setAttribute('id','role');
+
+
+            var logo=document.createElement('img');
+            logo.src=e.companyLogo;
+            logo.setAttribute('id','logo1');
+
+            box.append(img,name1,companyRole,logo);
+            document.querySelector('#container').append(box);
+        })
+        
+        
+        
+    
+</script>

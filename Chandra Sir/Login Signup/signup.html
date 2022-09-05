@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            display: flex;
+            background-color: teal;
+            justify-content: space-around;
+            line-height: 50px;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="men.html">Men</a></div>
+        <div><a href="women.html">Women</a></div>
+        <div><a href="login.html">Login</a></div>
+        <div><a href="signUp.html">SignUp</a></div>
+    </div>
+    <h1>SignUp Page</h1>
+    <form>
+        <input id='email' type="email" placeholder="enter email">
+        <input id='mobile' type="number" placeholder="enter mobile">
+        <input id='password' type="password" placeholder="enter password">
+        <input type="submit" value="SignUp">
+     
+    </form>
+</body>
+</html>
+<script>
+  document.querySelector('form').addEventListener('submit',myform);
+  var arrSign=[];
+  if(localStorage.getItem('arrSignUpInfo')==null){
+      var arrSignUp=[];
+  }else{
+      arrSignUp=JSON.parse(localStorage.getItem('arrSignUpInfo'));
+  }
+    
+function myform(){
+    event.preventDefault();
+    var formObj={
+        email:document.querySelector('#email').value,
+        mobile:document.querySelector('#mobile').value,
+        password:document.querySelector('#password').value
+
+    }
+    arrSignUp.push(formObj);
+    localStorage.setItem('arrSignUpInfo',JSON.stringify(arrSignUp));
+    alert('Sign Up successfully')
+}
+</script>

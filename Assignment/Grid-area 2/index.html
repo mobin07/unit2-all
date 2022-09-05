@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+         Grid 2
+        </title>
+        <style>
+            #container{
+                /* height: 400px; */
+                width: 60%;
+                /* border:1px solid red; */
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+                grid-template-rows: repeat(2,200px);
+                gap: 25px;
+                margin: auto;
+                grid-template-areas: "a a b e"
+                "c d b e";
+            }
+            #container>div{
+                background-color: black;
+                color: white;
+                border-radius: 10px;
+                /* height: 200px; */
+                font-size: 50px;
+                padding-left: 40px;
+                padding-top: 40px;
+            }
+            div>div:nth-child(1){
+                grid-area: a;
+            }
+            div>div:nth-child(2){
+                grid-area: b;
+            }
+            div>div:nth-child(3){
+                grid-area: c;
+            }
+            div>div:nth-child(4){
+                grid-area: d;
+            }
+            div>div:nth-child(5){
+                grid-area: e;
+                margin-bottom: -40px;
+            }
+        </style>
+    </head>
+    <body>
+     <div id="container">
+         <div>A</div>
+         <div>B</div>
+         <div>C</div>
+         <div>D</div>
+         <div>E</div>
+     </div>
+    </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>Media Query</title>
+        <style>
+            h1{
+                /* justify-content: center; */
+                text-align: center;
+            }
+            .grey{
+                color:gray;
+                text-align: center;
+                
+
+
+            }
+            .top{
+                /* border: 2px solid red; */
+                margin:auto
+            }
+            .outer{
+                width:80%;
+                /* border: 2px solid red; */
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-template-rows: auto;
+                
+                
+                height: 300px;
+                margin: auto;
+                justify-content: space-between;
+                margin-top: 50px;
+                grid-template-areas: "a b c";
+            }
+            .outer>div:nth-child(1){
+                grid-area: a;
+            }
+            .outer>div:nth-child(2){
+                grid-area: b;
+            }
+            .outer>div:nth-child(3){
+                grid-area: c;
+            }
+            .outer>div{
+                width: 300px;;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+            }
+            div>p:nth-child(1){
+                text-align: center;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            .Free{
+                color:green;
+                font-size: 30px;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 15px;
+
+            }
+            .month{
+                text-align: center;
+                color: gray;
+                margin-top: -25px;
+                font-style: italic;
+            }
+            div>p:nth-child(4){
+                text-align: center;
+                color: gray;
+
+            }
+            .button1{
+               margin-left: 100px;
+            }
+            .but{
+                border: 1px solid blue;
+                color: blue;
+                width: 60%;
+                margin: auto;
+                height: 30px;
+                text-align: center;
+                padding-top: 15px;
+                font-weight: bolder;
+                border-radius: 10px;
+            }
+            .doller{
+                color: orangered;
+                font-size: 30px;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 15px;
+            }
+            .buton{
+                /* border: 1px solid blue; */
+                color: white;
+                width: 60%;
+                margin: auto;
+                height: 30px;
+                text-align: center;
+                padding-top: 15px;
+                font-weight: bolder;
+                border-radius: 10px;
+                background-color: blue;
+
+            }
+            .doll{
+                color:blue;
+                font-size: 30px;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 15px;
+            }
+            @media only screen and (min-width: 421px) and (max-width: 780px) {
+                .outer{
+                    grid-template-columns: repeat(2,1fr);
+                    grid-template-rows: auto;
+                    grid-template-areas: "a b"
+                    "c  .";
+                }
+                .top{
+                    width:75%;
+                }
+            }
+            @media only screen and (min-width: 70px) and (max-width: 420px){
+                .outer{
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto;
+                    grid-template-areas: "a"
+                    'b'
+                    "c";
+                }
+                .top{
+                    width:75%;
+                }
+            }
+
+
+
+
+        </style>
+
+    </head>
+    <body><div class="top">
+        <h1>Choose a plan that right for<br>for your business</h1>
+        <p class="grey">We collect reviews from our users so you can get an honest opinion of what an <br>
+        experience with our website are really like!</p></div>
+        <div class="outer">
+            <div>
+               <p> Starter Plan</p>
+               <p class="Free">Free</p>
+               <p class="month">Per month</p>
+               <p>We collect reviews from our <br>users so you can get an honest<br>opinion of what 
+            an experience <br>with our website. </p>
+            <div class="but">
+                Start Now
+            <!-- <button class="button1">Start now</button> -->
+            </div>
+                
+            </div>
+            <div>
+                <p> Business Plan</p>
+                <p class="doller">$39.00</p>
+                <p class="month">Per month</p>
+                <p>We collect reviews from our <br>users so you can get an honest<br>opinion of what 
+             an experience <br>with our website. </p>
+             <div class="buton">
+                 Start Now
+             <!-- <button class="button1">Start now</button> -->
+             </div>
+            </div>
+            <div>
+                <p> Premium Plan</p>
+                <p class="doll">$59.00</p>
+                <p class="month">Per month</p>
+                <p>We collect reviews from our <br>users so you can get an honest<br>opinion of what 
+             an experience <br>with our website. </p>
+             <div class="but">
+                 Start Now
+             <!-- <button class="button1">Start now</button> -->
+             </div>
+            </div>
+        </div>
+
+
+    </body>
+</html>

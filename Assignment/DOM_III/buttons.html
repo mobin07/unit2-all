@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #inner{
+            margin: 10px;
+            height: 50px;
+            width: 100px;
+            border-radius :10px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var buttonObj=[
+        {textContent:'Primary',color:'white',bgcolor:'blue'},
+        {textContent:'Secondary',color:'white',bgcolor:'grey'},    
+        {textContent:'Success',color:'white',bgcolor:'green'},
+        {textContent:'Danger',color:'white',bgcolor:'red'},
+        {textContent:'Warning',color:'black',bgcolor:'yellow'},
+        {textContent:'Info',color:'white',bgcolor:'blue'},
+        {textContent:'Light',color:'black',bgcolor:'white'},
+        {textContent:'Dark',color:'white',bgcolor:'black'},
+        {textContent:'Link',color:'blue',bgcolor:'white'},
+    ]
+    buttonObj.map(function(e,i,arr){
+        var btn1=document.createElement('button');
+        btn1.innerText=e.textContent;
+        btn1.style.color=e.color;
+        btn1.style.background=e.bgcolor;
+        btn1.setAttribute('id','inner');
+       
+        // btn1.style.margin=10px;
+        document.querySelector('body').append(btn1);
+
+
+    })
+</script>

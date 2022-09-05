@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        #container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+    
+}
+#hey{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: auto;
+
+}
+#newbie{
+    display: flex;
+    border: 1px solid red;
+    /* height: 30px; */
+    margin: auto;
+   
+
+    
+}
+#new2{
+    border:1px solid black;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+#new3{text-decoration: line-through;
+    border: 1px solid green;
+    margin-left: 50px;
+    color: grey;
+
+
+}
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script >
+    var data = [
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN’S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+];
+data.map(function(e,i,arr){
+    var box=document.createElement('div');
+    box.setAttribute('id','hey');
+    var img=document.createElement('img');
+    img.src=e.imgUrl;
+
+    var name1=document.createElement('p');
+    name1.innerText=e.name;
+
+    var box2=document.createElement('div');
+    box2.setAttribute('id','newbie')
+
+    var box3=document.createElement('div');
+    box3.setAttribute('id','new2')
+    var price=document.createElement('p');
+    price.innerText=e.price;
+
+    box3.append(price);
+    
+    
+    var box4=document.createElement('div');
+    box4.setAttribute('id','new3');
+    var str=document.createElement('p');
+    str.innerText=e.strikedOffPrice;
+    box4.append(str);
+
+    box2.append(box3,box4);
+
+    box.append(img,name1,box2);
+    document.querySelector('#container').append(box);
+
+})
+</script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Grid 3</title>
+    <style>
+    #container{
+        /* height: 400px; */
+        width:60%;
+        margin:auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(3,100px);
+        /* border:2px solid red; */
+        gap: 25px;
+        grid-template-areas: "a b b c"
+        "d d e f"
+        "g h i i";
+    }
+    #container>div{
+        background-color: green;
+        height: 100px;
+    }
+    div>div:nth-child(1){
+        grid-area: a;
+        margin-right: 40px;
+    } div>div:nth-child(2){
+        grid-area: b;
+        margin-right: 40px;
+
+    }
+    div>div:nth-child(3){
+        grid-area: c;
+        margin-left: 40px;
+
+    }
+    div>div:nth-child(4){
+        grid-area: d;
+    }
+    div>div:nth-child(5){
+        grid-area: e;
+        margin-left: 40px;
+
+    }
+    div>div:nth-child(6){
+        grid-area: f;
+        margin-left: 40px;
+
+    }
+    div>div:nth-child(7){
+        grid-area: g;
+        margin-right: 40px;
+
+    }
+    div>div:nth-child(8){
+        grid-area: h;
+        margin-right: 40px;
+
+    }
+    div>div:nth-child(9){
+        grid-area: i;
+        margin-left: -40px;
+
+    }
+
+    </style>
+    </head>
+    <body>
+     <div id="container">
+         <div>a</div>
+         <div>b</div>
+         <div>c</div>
+         <div>d</div>
+         <div>e</div>
+         <div>f</div>
+         <div>g</div>
+         <div>h</div>
+         <div>i</div>
+     </div>
+    </body>
+</html>

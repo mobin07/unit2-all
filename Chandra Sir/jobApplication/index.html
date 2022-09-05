@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            display: flex;
+            justify-content: space-around;
+            color: teal;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            background-color: whitesmoke;
+            line-height: 50px;
+            font-size: 30px;
+        }
+        P{
+            font-size: 25px;
+            font-weight: bolder;
+        }
+        div a{
+            color: teal;
+            text-decoration: none;
+        }
+        form{
+            /* text-align: center; */
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            margin-top: 100px;
+            width: 30%;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            font-size: 20px;
+            
+
+        }
+        input, select{
+            display: block;
+            font-size: 20px;
+            margin: 15px 0px;
+            padding: 2px;
+        }
+        #submit{
+            border-radius: 15px;
+            color: aliceblue;
+            background-color: black;
+            margin: auto;
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div >Home</div>
+        <div ><a href="appliedJob.html">Applied Jobs</a></div>
+        <div><a href="bookmark.html">Bookmark</a></div>
+    </div>
+    <form>
+        <p>Enter your application details</p>
+        <input id="name" type="text" placeholder="Enter Name">
+        <input id='email' type="email" placeholder="Enter email">
+        <select id="role">
+            <option value="FSD">FSD</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+
+        </select>
+        <input id='salary' type="number" placeholder="Expected salary in lakhs">
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
+<script>
+    document.querySelector('form').addEventListener('submit',myFunction);
+    var jobArr=JSON.parse(localStorage.getItem('jobApplications')) || [];
+ 
+    function myFunction(){
+        event.preventDefault();
+        var jobObj={
+            
+            name:document.querySelector('#name').value,
+            email:document.querySelector('#email').value,
+
+            role:document.querySelector('#role').value,
+            salary:document.querySelector('#salary').value
+        }
+        jobArr.push(jobObj);
+        localStorage.setItem('jobApplications',JSON.stringify(jobArr));
+        document.querySelector('#name').value='';
+        document.querySelector('#email').value='';
+        document.querySelector('#role').value='';
+        document.querySelector('#salary').value='';
+
+
+
+    }
+
+
+</script>

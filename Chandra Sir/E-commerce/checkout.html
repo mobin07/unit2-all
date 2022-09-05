@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <h1>Checkout page</h1>
+      <form>
+          <p>Enter card details</p>
+          <input type="number" placeholder="enter card details">
+          <p>Enter cvv</p>
+          <input type="number" placeholder="enter cvv">
+          <p>Enter otp</p>
+          <input type="number" placeholder="enter otp">
+          <input type ='submit'>
+          
+
+
+
+          
+      </form>
+      
+</body>
+</html>
+
+<script>
+      //card num,cvv,expiry,otp
+      document.querySelector('form').addEventListener('submit',myfunction);
+      function myfunction(){
+          event.preventDefault();
+          var total=document.createElement('p');
+          var value=localStorage.getItem('totalcart')
+          total.innerText=value+'is the total'
+          body.append(total);
+      }
+    
+
+
+</script>
